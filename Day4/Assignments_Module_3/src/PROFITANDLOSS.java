@@ -10,7 +10,7 @@ public class PROFITANDLOSS {
         y=sc.nextInt();
         System.out.println("Enter the selling price of one egg");
         x=sc.nextInt();
-        System.out.println((float)(x*dozen-y)*100/y);
+        System.out.format("Harish's Profit Percentage is %.2f percent",(float)(x*dozen-y)*100/y);
         sc.close();
     }
 }

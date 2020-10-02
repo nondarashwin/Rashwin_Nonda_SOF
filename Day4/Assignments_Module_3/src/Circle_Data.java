@@ -11,16 +11,16 @@ public class Circle_Data {
         option = sc.next();
         switch (option) {
             case "DIA":
-                System.out.println("The Diameter of Circle is " + (2 * radius));
+                System.out.format("The Diameter of Circle is %.2f" , (2 * radius));
                 break;
             case "AR":
-                System.out.println("The Area of Circle is " + (Math.PI * radius * radius));
+                System.out.format("The Area of Circle is %.2f" , (Math.PI * radius * radius));
                 break;
             case "PER":
-                System.out.println("The Perimeter of circle " + (2 * Math.PI * radius));
+                System.out.format("The Perimeter of circle %.2f",  (2 * Math.PI * radius));
                 break;
             case "ARSEM":
-                System.out.println("The Area of Semi Circle " + (Math.PI * radius * radius) / 2);
+                System.out.format("The Area of Semi Circle %.2f" , (Math.PI * radius * radius) / 2);
                 break;
             default:
                 System.out.println("Please Select Right option");

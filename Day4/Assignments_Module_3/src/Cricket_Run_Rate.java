@@ -12,7 +12,8 @@ public class Cricket_Run_Rate {
         System.out.println("Enter the Target Score");
         Target_score = sc.nextInt();
         if (Total_over > Bowled_over)
-            System.out.println("The Required Run rate is " + String.format("%.3g%n", (Target_score - CRR * Bowled_over) / (Total_over - Bowled_over)));
+            System.out.format("the Required Run rate is  %.2f",(Target_score - CRR * Bowled_over) / (Total_over - Bowled_over));
+            //System.out.println("The Required Run rate is " + String.format("%.3f%", (Target_score - CRR * Bowled_over) / (Total_over - Bowled_over)));
         else
             System.out.println("can't bowl more then Total over");
 

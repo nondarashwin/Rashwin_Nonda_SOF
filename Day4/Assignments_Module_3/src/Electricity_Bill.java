@@ -5,8 +5,8 @@ public class Electricity_Bill {
         int Previous_Reading, Current_Reading;
         Scanner sc = new Scanner(System.in);
         int[] W_slab = {30, 70, 100};
-        double cost = 0;
-        double[] W_rate = {2.30, 3.50, 4.60};
+        float cost = 0;
+        float[] W_rate = {2.30f, 3.50f, 4.60f};
         if (W_slab.length == W_rate.length) {
             System.out.println("Enter the Previous reading");
             Previous_Reading = sc.nextInt();
@@ -29,7 +29,7 @@ public class Electricity_Bill {
                 }
 
             }
-            System.out.println("The Bill Amount is " + cost);
+            System.out.format("The Bill Amount is %.2f" , cost);
 
 
         } else {
