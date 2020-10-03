@@ -53,6 +53,7 @@ la.getoutput1();
        }
        else
            System.out.println("Invalid input");
+       sc.close();
    }
 }
 
