@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class SUMOFODDDIGITS {
     public int sumOddDigits(int n) {
-        int count = 0, sum = 0;
+        int sum = 0;
         if (n < 0 || n > 32767) {
             return -1;
         }
