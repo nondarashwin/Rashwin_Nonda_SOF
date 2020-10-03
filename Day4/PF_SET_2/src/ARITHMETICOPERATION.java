@@ -2,6 +2,7 @@ import java.util.Scanner;
 /*As instuction were followed according to the assignment
 * this program fails for every condition where the output the operation will result in -1
 * ex 1 2 2 it will give output as -1 as -1 is set for error code it will show as error
+* but it can be changed into 2 methods to one to check the validity of the input another for output produce
 * */
 public class ARITHMETICOPERATION {
     public int performArithmeticOperation(int a,int b,int c){
