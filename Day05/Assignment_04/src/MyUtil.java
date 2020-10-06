@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class MyUtil {
+    int a;
     static int throwDice() {
         int temp;
         do {
