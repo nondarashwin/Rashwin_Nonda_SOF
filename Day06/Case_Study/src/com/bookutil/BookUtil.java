@@ -5,7 +5,7 @@ import com.book.*;
 import java.util.Scanner;
 
 public class BookUtil {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidInputException {
         int choice;
         BookStore bookStore = new BookStore();
         Scanner sc = new Scanner(System.in);

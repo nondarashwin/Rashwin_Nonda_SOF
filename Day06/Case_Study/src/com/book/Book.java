@@ -1,5 +1,7 @@
 package com.book;
 
+import javax.management.openmbean.InvalidKeyException;
+
 public class Book {
     private String bookId, title, author, category;
     private final String[] categories = {"Science", "Fiction", "Technology", "Others"};
@@ -8,50 +10,40 @@ public class Book {
     private static int id = 1;
     private final int digit = 3;
 
-    public Book(String title, String author, String category, float price) {
-        if (setBookId()) {
-            setTitle(title);
-            setAuthor(author);
-            if (setCategory(category)) {
-                if (setPrice(price)) {
-                    System.out.println("*******");
-                    System.out.println("The book is added with these details");
-                    System.out.println("Id:" + getBookId());
-                    System.out.println("Title:" + getTitle());
-                    System.out.println("Author:" + getAuthor());
-                    System.out.println("Category:" + getCategory());
-                    System.out.println("Price:" + getPrice());
-                } else {
-                    System.out.println("Price cannot be Negative");
-                    error_bit = true;
-                }
-            } else {
-                System.out.println("Category Not found");
-                error_bit = true;
-            }
-        }
-
+    public Book(String title, String author, String category, float price) throws InvalidInputException {
+        setBookId();
+        setTitle(title);
+        setAuthor(author);
+        setCategory(category);
+        setPrice(price);
+        System.out.println("*******");
+        System.out.println("The book is added with these details");
+        System.out.println("Id:" + getBookId());
+        System.out.println("Title:" + getTitle());
+        System.out.println("Author:" + getAuthor());
+        System.out.println("Category:" + getCategory());
+        System.out.println("Price:" + getPrice());
     }
 
     public String getBookId() {
         return bookId;
     }
 
-    private String generateId() {
-        int temp =id++, count = 0;
+    private String generateId() throws InvalidInputException {
+        int temp = id++, count = 0;
         //System.out.println(id);
         String output = "B";
         if (temp == 0) {
             return "B001";
         }
-        int temp1=temp;
+        int temp1 = temp;
         while (temp != 0) {
             count += 1;
             temp /= 10;
         }
         if (count > this.digit) {
             System.out.println("Book store is full");
-            return "ERROR";
+            throw new InvalidInputException("The Book Store is full");
         }
         int add_zero = this.digit - count;
         while (add_zero != 0) {
@@ -60,17 +52,17 @@ public class Book {
             add_zero--;
             //System.out.println(output);
         }
-        return output +temp1 ;
+        return output + temp1;
     }
 
-    public boolean setBookId() {
+    public void setBookId() throws InvalidInputException {
 
         String temp = generateId();
         if (!temp.equals("ERROR")) {
             this.bookId = temp;
-            return true;
+
         }
-        return false;
+
     }
 
     public String getTitle() {
@@ -94,7 +86,7 @@ public class Book {
         return category;
     }
 
-    public boolean setCategory(String category) {
+    public void setCategory(String category) throws InvalidInputException {
         boolean flag = false;
         for (String type : categories) {
             if (category.toLowerCase().equals(type.toLowerCase())) {
@@ -105,8 +97,9 @@ public class Book {
         if (flag) {
             this.category = category;
 
-        }
-        return flag;
+        }else
+            throw new InvalidInputException("The Category Not found");
+
 
     }
 
@@ -114,11 +107,13 @@ public class Book {
         return price;
     }
 
-    public boolean setPrice(float price) {
+    public void setPrice(float price) throws InvalidInputException {
         if (price > 0) {
             this.price = price;
-            return true;
+
         }
-        return false;
+        else
+            throw new InvalidInputException("Price Cant be negative");
+
     }
 }

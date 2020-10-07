@@ -11,16 +11,16 @@ public class BookStore {
         if (books == null) {
             len = 1;
             temp = new Book[len];
-            temp[len - 1] = b;
+
         } else {
             len = books.length + 1;
             temp = new Book[len];
             for (int i = 0; i < books.length; i++) {
                 temp[i] = books[i];
             }
-            temp[len - 1] = b;
-        }
 
+        }
+        temp[len - 1] = b;
         books = temp;
     }
 
@@ -65,7 +65,7 @@ public class BookStore {
             System.out.println("the Book Author:" + author + " not found");
     }
 
-    public void updateBook(String bookId) {
+    public void updateBook(String bookId) throws InvalidInputException {
         boolean flag = false;
         int i;
         if (books == null) {
@@ -85,7 +85,7 @@ public class BookStore {
                 System.out.println("choose which to update \n 1.Author \n2.Title \n3.Price \n 4.Category \n 5.exit");
                 Scanner sc = new Scanner(System.in);
                 int choice = sc.nextInt();
-                String junk=sc.nextLine();
+                String junk = sc.nextLine();
                 switch (choice) {
                     case 1:
                         String author;
@@ -100,14 +100,12 @@ public class BookStore {
                     case 3:
                         float price;
                         price = sc.nextFloat();
-                        if (!books[i].setPrice(price))
-                            System.out.println("Price cannot be negative");
+                        books[i].setPrice(price);
                         break;
                     case 4:
                         String category;
                         category = sc.nextLine();
-                        if (!books[i].setCategory(category))
-                            System.out.println("Category Not found");
+                        books[i].setCategory(category);
                         break;
                     default:
                         flag = false;
