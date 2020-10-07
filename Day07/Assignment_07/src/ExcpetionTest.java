@@ -5,9 +5,12 @@ public class ExcpetionTest {
             int b=Integer.parseInt(args[1]);
             System.out.println(a/b);
         }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Arguments length is zero");
+            System.out.println("No inputs provided");
         }catch (ArithmeticException e){
-            System.out.println("number cannot be divided by zero");
+            System.out.println("division with zero is not possible");
+        }
+        catch (NumberFormatException e){
+            System.out.println("Only Integers are allowed");
         }
     }
 }
