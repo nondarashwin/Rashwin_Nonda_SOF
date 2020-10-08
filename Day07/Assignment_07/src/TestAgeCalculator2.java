@@ -52,6 +52,16 @@ public class TestAgeCalculator2 {
 
 
         }finally {
+            try {
+
+                String sdate1 = sc.nextLine();
+                age.setDate(sdate1);
+                age.calculateAge();
+
+
+            } finally {
+                
+            }
             sc.close();
         }
     }
