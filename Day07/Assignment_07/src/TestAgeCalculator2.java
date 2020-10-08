@@ -1,4 +1,5 @@
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -17,11 +18,13 @@ class AgeCalculator2{
     public void calculateAge() throws FormatNotMatching1 {
         DateFormat df1=new SimpleDateFormat("dd/mm/yyyy");
         java.util.Date d1=new Date();
+        df1.setLenient(false);
         int year=Integer.parseInt(df1.format(d1).substring(6));
         String das= df1.format(d1);
+
         //System.out.println("print");
         if(das.compareTo(this.Date)>0){
-            throw new FormatNotMatching1("Date should before todays date");
+            throw new FormatNotMatching1("Date should before today's date");
         }
         System.out.println(year-Integer.parseInt(this.Date.substring(6)));
 
