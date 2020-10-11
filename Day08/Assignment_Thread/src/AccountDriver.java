@@ -1,16 +1,17 @@
-class Account{
+class Account {
     private String name;
     private int accNO;
     private double amount;
-public void withdraw(double amount){
-    if(this.amount-amount<0){
-        System.out.println("Transaction Declined Due to low amount");
+
+    public void withdraw(double amount) {
+        if (this.amount - amount < 0) {
+            System.out.println("Transaction Declined Due to low amount");
+        } else {
+            this.amount -= amount;
+            System.out.println("Transcation complete Balance "+this.amount);
+        }
     }
-    else {
-        this.amount-=amount;
-        System.out.println("Transcation complete");
-    }
-}
+
     public String getName() {
         return name;
     }
@@ -42,24 +43,36 @@ public void withdraw(double amount){
     }
 
 }
-class AccountThread implements Runnable{
+
+class AccountThread implements Runnable {
     Account a;
-    public AccountThread(Account a){
-        this.a=a;
+double amount;
+    public AccountThread(Account a,double amount) {
+        this.a = a;
+        this.amount=amount;
     }
+
     @Override
-    public void run() {
-        System.out.println(Thread.currentThread().getName());
-a.withdraw(1000);
+    public  synchronized void run() {
+        //System.out.println(Thread.currentThread().getName());
+        a.withdraw(amount);
+        try {
+            Thread.sleep(1000);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
+
 public class AccountDriver {
     public static void main(String[] args) {
-Account a=new Account("rashwin",12345,1500);
-AccountThread a1=new AccountThread(a);
-Thread t1=new Thread(a1,"Transaction1");
-Thread t2=new Thread(a1,"Transaction2");
-t1.start();
-t2.start();
+        Account a = new Account("rashwin", 12345, 3500);
+        AccountThread a1 = new AccountThread(a,1500);
+        AccountThread a2=new AccountThread(a,2000);
+        Thread t1 = new Thread(a1, "Transaction1");
+        Thread t2 = new Thread(a2, "Transaction2");
+        t1.start();
+        t2.start();
     }
 }

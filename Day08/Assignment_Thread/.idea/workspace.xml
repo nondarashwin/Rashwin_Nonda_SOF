@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b495bb73-8fd3-4ded-b3aa-e32478737213" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AccountDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_8/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/CoverWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/CoverWords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/TestCoverWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/TestCoverWords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/putBrackets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/putBrackets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestCoverWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestCoverWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/AccountDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/AccountDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment_Thread/AccountThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment_Thread/AccountThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountDriver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Application.TestCoverWords">
+  <component name="RunManager" selected="Application.AccountDriver">
     <configuration name="AccountDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AccountDriver" />
       <module name="Assignment_Thread" />
@@ -89,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestCoverWords" />
         <item itemvalue="Application.AccountDriver" />
+        <item itemvalue="Application.TestCoverWords" />
         <item itemvalue="Application.TestPrintTables" />
         <item itemvalue="Application.TestPrintString" />
         <item itemvalue="Application.PrintNumbers" />
@@ -106,34 +105,57 @@
       <option name="presentableId" value="Default" />
       <updated>1602167508738</updated>
       <workItem from="1602167509753" duration="2684000" />
-      <workItem from="1602208472302" duration="1749000" />
+      <workItem from="1602208472302" duration="5510000" />
     </task>
+    <task id="LOCAL-00001" summary="day_08">
+      <created>1602210789420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602210789420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="day_08">
+      <created>1602210804056</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602210804056</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="day_08" />
+    <option name="LAST_COMMIT_MESSAGE" value="day_08" />
   </component>
   <component name="WindowStateProjectService">
     <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1602210066290">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="491" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1602210066290" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1602210649727">
+    <state x="144" y="27" width="1067" height="741" key="CommitChangelistDialog2" timestamp="1602210803952">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1602210649727" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1602210649726">
+    <state x="144" y="27" width="1067" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1602210803952" />
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1602227287121">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1602210649726" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1602210649725">
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1602227287121" />
+    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1602227287119">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1602210649725" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1602210649726">
+    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1602227287119" />
+    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1602227287118">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1602210649726" />
+    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1602227287118" />
+    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1602227287119">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1602227287119" />
     <state width="1320" height="215" key="GridCell.Tab.1.bottom" timestamp="1602170200876">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -154,5 +176,13 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1602168884532" />
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602210812945">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1602210812945" />
+    <state x="277" y="27" width="802" height="741" key="new project wizard" timestamp="1602227281514">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="277" y="27" width="802" height="741" key="new project wizard/0.27.1366.741@0.27.1366.741" timestamp="1602227281514" />
   </component>
 </project>
