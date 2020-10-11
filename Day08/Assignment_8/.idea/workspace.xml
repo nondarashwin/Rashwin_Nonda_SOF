@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d657f463-c993-4d2f-b2bc-c11aa215f426" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/Assignment_Collections.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/out/production/Assignment_Collections/StudentMarks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/ScoreCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/StudentMarks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/TestPatientList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/TestScoreAnalyser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/PatientHashSet/TestPatientList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/States.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/States.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_Thread/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_Thread/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/AccountDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/AccountDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/AccountThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_Thread/out/production/Assignment_Thread/AccountThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_Thread/src/AccountDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_Thread/src/AccountDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +74,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.DeserializeCar" />
@@ -107,7 +107,7 @@
       <workItem from="1602206284982" duration="2148000" />
       <workItem from="1602216398797" duration="1543000" />
       <workItem from="1602390738271" duration="415000" />
-      <workItem from="1602391312922" duration="612000" />
+      <workItem from="1602391312922" duration="1226000" />
     </task>
     <task id="LOCAL-00001" summary="Day_08">
       <created>1602167369999</created>
