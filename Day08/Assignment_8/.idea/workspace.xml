@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d657f463-c993-4d2f-b2bc-c11aa215f426" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/PatientHashSet/TestPatientList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/States.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/src/States.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
