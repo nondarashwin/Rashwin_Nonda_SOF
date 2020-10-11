@@ -1,10 +1,9 @@
 import java.io.*;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 
 public class States {
     public static void main(String[] args) throws IOException {
-        File f1=new File("/home/rashwin/Project/Rashwin_Nonda_SOF/Day09/Assignment_Collections/src/States.txt");
+        File f1=new File("src/States.txt");
         BufferedReader fos=new BufferedReader(new FileReader(f1));
         LinkedHashSet<String> States=new LinkedHashSet<>();
         //System.out.println(content);
