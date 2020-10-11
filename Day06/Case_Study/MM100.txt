@@ -1,0 +1,12 @@
+PNR:MM100
+Train No:111
+Train Name:GaribRath
+From:Mumbai
+To:Mangalore
+Train DateSun Jan 12 00:12:00 IST 2020
+Passenger:
+Name	Age	Gender	Fare
+qas	5	M	375
+qazxc	15	F	187
+qwert	61	M	450
+Total Price:1012.0

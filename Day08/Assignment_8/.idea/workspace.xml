@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d657f463-c993-4d2f-b2bc-c11aa215f426" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/BM100.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/MM100.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/InputNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/InvalidInputException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Passenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/TicketApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Train.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/TrainDAo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Day06/Case_Study/out/production/Case_Study/com/book/InvalidInputException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day06/Case_Study/out/production/Case_Study/com/book/InvalidInputException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day09/Assignment_Collections/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +115,8 @@
       <workItem from="1602216398797" duration="1543000" />
       <workItem from="1602390738271" duration="415000" />
       <workItem from="1602391312922" duration="1226000" />
+      <workItem from="1602421379471" duration="135000" />
+      <workItem from="1602425010647" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Day_08">
       <created>1602167369999</created>
