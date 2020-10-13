@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Map;
 
 class ProverbReverser{
     public String[] reverseWord(String s){
@@ -31,7 +32,7 @@ class ProverbReverser{
            bos.write((byte)'\n');
         }
         bis.close();
-
+        Map.e
 
         //bos.write(temp1);
         bos.close();

@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b10091a-684f-4713-be23-e8bf3c2b3e57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/BM100.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/MM100.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/InputNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/InvalidInputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/TicketApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/Train.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Day06/Case_Study/src/TrainTicket/TrainDAo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day06/Case_Study/out/production/Case_Study/com/book/InvalidInputException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day06/Case_Study/out/production/Case_Study/com/book/InvalidInputException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day08/Assignment_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day08/Assignment_8/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5b10091a-684f-4713-be23-e8bf3c2b3e57" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
