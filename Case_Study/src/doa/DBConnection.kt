@@ -13,7 +13,7 @@ fun getConnection1() {
                 "jdbc:mysql://localhost/Store",
                 connectionProps)
         if (conn != null) {
-            println("Connected successfully")
+            //println("Connected successfully")
         }
     } catch (ex: SQLException) {
         // handle any errors

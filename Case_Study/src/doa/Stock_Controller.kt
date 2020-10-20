@@ -38,7 +38,7 @@ fun updateStockRecord(stock: Stock) {
     };
     val rowsUpdated = statement.executeUpdate()
     if (rowsUpdated > 0) {
-        println("An existing user was updated successfully!")
+        //println("An existing user was updated successfully!")
     }
 }
 fun selectStockRecord(): ArrayList<Stock> {

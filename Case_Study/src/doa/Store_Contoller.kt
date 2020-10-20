@@ -21,7 +21,7 @@ fun insert(store:Store): Boolean {
     var rowsInserted: Int? = statement?.executeUpdate()
     if (rowsInserted != null) {
         if (rowsInserted > 0) {
-            System.out.println("A new user was inserted successfully!");
+            //System.out.println("A new user was inserted successfully!");
         }
     }
     return true;
@@ -43,7 +43,7 @@ fun updateStoreRecord(store: Store) {
     }
     val rowsUpdated = statement.executeUpdate()
     if (rowsUpdated > 0) {
-        println("An existing user was updated successfully!")
+        //println("An existing user was updated successfully!")
     }
 }
 fun selectStoreRecord(): ArrayList<Store> {

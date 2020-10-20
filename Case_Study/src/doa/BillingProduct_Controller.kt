@@ -28,6 +28,9 @@ fun selectBillingProductRecord():ArrayList<Product>{
         var id=result.getInt("productId")
         for(i in product){
             if(i.productId==id){
+                print(id)
+                i.productCost=result.getInt("cost")
+                i.productQuantity=result.getInt("quantity")
                 product.add(i)
             }
         }
@@ -36,6 +39,7 @@ fun selectBillingProductRecord():ArrayList<Product>{
     return product
 }
 fun selectBillingProductRecord(billId:Int): ArrayList<Product> {
+    //println("selectbillingProudctRecord $billId")
     val sql = "SELECT * FROM BillingProduct where billId=$billId"
     val statement: Statement = conn!!.createStatement()
     val result: ResultSet = statement.executeQuery(sql)
@@ -43,8 +47,12 @@ fun selectBillingProductRecord(billId:Int): ArrayList<Product> {
     var product:ArrayList<Product> = arrayListOf()
     while (result.next()) {
         var id=result.getInt("productId")
-        for(i in product){
+
+        for(i in products){
             if(i.productId==id){
+                //rintln("productid "+id)
+                i.productCost=result.getInt("cost")
+                i.productQuantity=result.getInt("quantity")
                 product.add(i)
             }
         }
@@ -54,6 +62,7 @@ fun selectBillingProductRecord(billId:Int): ArrayList<Product> {
 }
 fun insertBP(billing: Billing): Boolean {
     for(i in billing.productIds){
+
     var sql: String = "insert into BillingProduct(billId,productId,cost,quantity) values(?,?,?,?);";
     var statement: PreparedStatement? = conn?.prepareStatement(sql);
     if (statement != null) {
@@ -71,7 +80,7 @@ fun insertBP(billing: Billing): Boolean {
     var rowsInserted: Int? = statement?.executeUpdate()
     if (rowsInserted != null) {
         if (rowsInserted > 0) {
-            System.out.println("A new user was inserted successfully!")
+            //System.out.println("A new user was inserted successfully!")
         }
     }}
     return true;

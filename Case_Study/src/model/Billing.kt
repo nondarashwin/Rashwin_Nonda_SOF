@@ -13,8 +13,13 @@ class Billing {
         this.productIds = productIds
         if(amount==-1){
         for (i in productIds) {
+            //println("${i.productCost} ${i.productQuantity}")
             this.amount += i.productCost*i.productQuantity
         }}
+        else
+        {
+            this.amount=amount
+        }
     }
 
 }
