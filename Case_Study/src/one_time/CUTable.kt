@@ -10,12 +10,21 @@ import model.Store
 import java.sql.PreparedStatement
 
 fun insert() {
-    var p = Product(productName = "Laptop", productCost = 30000, productInfo = "Low performance", productType = "Electronics", productContniuity = true)
-    insert(p)
-    var s = Store(storeName = "ABC", storeAddress = "XYZ")
-    insert(s)
-    var stock = Stock(1, 1, 20)
-    insert(stock)
+    insert(Product(productName = "Laptop", productCost = 30000, productInfo = "Low performance", productType = "Electronics", productContniuity = true))
+    insert(Product(productName = "Mobile", productCost = 70000, productInfo = "8GB Ram", productType = "Electronics", productContniuity = true))
+    insert(Product(productName = "Iron Box", productCost = 700, productInfo = "no steam", productType = "Electronics", productContniuity = true))
+    insert(Store(storeName = "ABC", storeAddress = "XYZ"))
+    insert(Store(storeName = "Rai", storeAddress = "Dubai"))
+    insert(Store(storeName = "song", storeAddress = "UAE"))
+    insert(Stock(1, 1, 5))
+    insert(Stock(1, 2, 20))
+    insert(Stock(1, 3, 20))
+    insert(Stock(2, 1, 5))
+    insert(Stock(2, 2, 20))
+    insert(Stock(2, 3, 20))
+    insert(Stock(3, 1, 20))
+    insert(Stock(3, 2, 5))
+    insert(Stock(3, 3, 20))
 }
 
 fun create() {
@@ -43,6 +52,6 @@ fun create() {
 fun main() {
     getConnection1()
     create()
-    //insert()
+    insert()
     connectionClose()
 }
