@@ -6,6 +6,7 @@ import model.Product
 import model.Stock
 import model.Store
 import java.util.*
+import javax.mail.Transport
 import kotlin.collections.ArrayList
 
 class Admin {
@@ -25,7 +26,6 @@ class Admin {
     fun displayAllProducts() {
         var p = selectProductRecord()
         for (i in p) {
-            print("*************")
             displayProduct(i)
         }
     }
@@ -232,7 +232,7 @@ fun updateStoreDetails(){
 
     fun checkStock() {
         var stock = selectStockRecord()
-
+        var message:String="Dear Admin,<br>"
         for (i in stock) {
             if (i.Stock <= 10) {
                 var store = searchStore(i.storeId)
@@ -243,10 +243,14 @@ fun updateStoreDetails(){
                         print(" Store Address=" + store.storeAddress)
                         print(" Product Name=" + product.productName)
                         println(" Stock Remaining="+i.Stock)
+                        var temp=message.plus("Store Name=${store.storeName} Store Address=${store.storeAddress} Product Name=${product.productName} Stock Remaining=${i.Stock}<br> ")
+                        message=temp
                     }
                 }
             }
         }
+        var temp=message.plus("<br>your sincerely,<br>Machine")
+        Transport.send(plainMail(temp))
     }
 
     fun eachProductSold() {
