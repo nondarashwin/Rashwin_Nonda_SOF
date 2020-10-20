@@ -194,6 +194,7 @@ fun updateStoreDetails(){
                 }
             }
         }
+        checkStock()
     }
 
     fun AddStore() {

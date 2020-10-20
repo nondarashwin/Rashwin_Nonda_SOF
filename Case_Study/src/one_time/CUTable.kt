@@ -37,13 +37,13 @@ fun create() {
     var statement1 = conn?.prepareStatement(sql1);
     var created1 = statement1?.execute()
 
-    var sql2: String = "CREATE TABLE IF NOT EXISTS Stock(storeId INT,productId INT,stock INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId),FOREIGN KEY(productId) REFERENCES Product(productId) )"
+    var sql2: String = "CREATE TABLE IF NOT EXISTS Stock(storeId INT,productId INT,stock INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId),FOREIGN KEY(productId) REFERENCES Product(productId),PRIMARY KEY (storeId,productId))"
     var statement2 = conn?.prepareStatement(sql2);
     var created2 = statement2?.execute()
     var sql3: String = "CREATE TABLE IF NOT EXISTS Billing(billId INT PRIMARY KEY AUTO_INCREMENT,storeId INT,totalAmount INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId));"
     var statement3 = conn?.prepareStatement(sql3)
     var create3 = statement3?.execute(sql3)
-    var sql4: String = "CREATE TABLE IF NOT EXISTS BillingProduct(billId INT,productId INT,cost INT,quantity INT,FOREIGN KEY(productId) REFERENCES Product(productId),FOREIGN KEY(billId) REFERENCES Billing(billId));"
+    var sql4: String = "CREATE TABLE IF NOT EXISTS BillingProduct(billId INT,productId INT,cost INT,quantity INT,FOREIGN KEY(productId) REFERENCES Product(productId),FOREIGN KEY(billId) REFERENCES Billing(billId),PRIMARY KEY(billId,productId));"
     var statement4 = conn?.prepareStatement(sql4)
     var create4 = statement3?.execute(sql4)
 
