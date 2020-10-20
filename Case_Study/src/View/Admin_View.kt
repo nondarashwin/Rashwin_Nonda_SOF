@@ -10,7 +10,7 @@ fun main(){
     var sc=Scanner(System.`in`)
     var flag=true
     while(flag){
-        println(" 1.Add Product \n 2.Add Store \n 3.Check Stock Availability \n 4.Update Stock \n 5.Add Stock \n 6.bill \n 7.display all product \n 8.Total products sold \n 9.update Product \n 10.update store details\n 11.highest selling product \n 12.exit\n")
+        println(" 1.Add Product \n 2.Add Store \n 3.Check Stock Availability \n 4.Update Stock \n 5.Add Stock \n 6.bill \n 7.display all product \n 8.Total Sale Of Each product \n 9.update Product \n 10.update store details\n 11.highest selling product \n 12.exit\n")
         var choice=sc.nextInt()
         getConnection1()
         when(choice){
