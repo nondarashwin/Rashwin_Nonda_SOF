@@ -8,20 +8,20 @@ fun main(args: Array<String>) {
     Transport.send(plainMail("Yes"))
 }
 
-fun plainMail(note:String): MimeMessage {
+fun plainMail(note: String): MimeMessage {
     val tos = arrayListOf("rashwinnonda@gmail.com") //Multiple recipients
     val from = "rashwinnonda@outlook.com" //Sender email
 
     val properties = System.getProperties()
 
-    with (properties) {
+    with(properties) {
         put("mail.smtp.host", "smtp-mail.outlook.com.") //Configure smtp host
         put("mail.smtp.port", "587") //Configure port
         put("mail.smtp.starttls.enable", "true") //Enable TLS
         put("mail.smtp.auth", "true") //Enable authentication
     }
 
-    val auth = object: Authenticator() {
+    val auth = object : Authenticator() {
         override fun getPasswordAuthentication() =
                 PasswordAuthentication(from, "SHIVAJI30121997") //Credentials of the sender email
     }
@@ -30,7 +30,7 @@ fun plainMail(note:String): MimeMessage {
 
     val message = MimeMessage(session)
 
-    with (message) {
+    with(message) {
         setFrom(InternetAddress(from))
         for (to in tos) {
             addRecipient(Message.RecipientType.TO, InternetAddress(to))
@@ -41,20 +41,21 @@ fun plainMail(note:String): MimeMessage {
 
     return message
 }
-fun plainMail(note:String,mailId:String): MimeMessage {
+
+fun plainMail(note: String, mailId: String): MimeMessage {
     val tos = arrayListOf(mailId) //Multiple recipients
     val from = "rashwinnonda@outlook.com" //Sender email
 
     val properties = System.getProperties()
 
-    with (properties) {
+    with(properties) {
         put("mail.smtp.host", "smtp-mail.outlook.com.") //Configure smtp host
         put("mail.smtp.port", "587") //Configure port
         put("mail.smtp.starttls.enable", "true") //Enable TLS
         put("mail.smtp.auth", "true") //Enable authentication
     }
 
-    val auth = object: Authenticator() {
+    val auth = object : Authenticator() {
         override fun getPasswordAuthentication() =
                 PasswordAuthentication(from, "SHIVAJI30121997") //Credentials of the sender email
     }
@@ -63,7 +64,7 @@ fun plainMail(note:String,mailId:String): MimeMessage {
 
     val message = MimeMessage(session)
 
-    with (message) {
+    with(message) {
         setFrom(InternetAddress(from))
         for (to in tos) {
             addRecipient(Message.RecipientType.TO, InternetAddress(to))

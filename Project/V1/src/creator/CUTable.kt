@@ -40,7 +40,7 @@ fun create() {
     val sql2 = "CREATE TABLE IF NOT EXISTS stock(storeId INT,productId INT,stock INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId),FOREIGN KEY(productId) REFERENCES Product(productId),PRIMARY KEY (storeId,productId))"
     val statement2 = conn?.prepareStatement(sql2)
     var created2 = statement2?.execute()
-    val sql3= "CREATE TABLE IF NOT EXISTS Billing(billId INT PRIMARY KEY AUTO_INCREMENT,storeId INT,totalAmount INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId));"
+    val sql3 = "CREATE TABLE IF NOT EXISTS Billing(billId INT PRIMARY KEY AUTO_INCREMENT,storeId INT,totalAmount INT,FOREIGN KEY(storeId) REFERENCES Stores(storeId));"
     val statement3 = conn?.prepareStatement(sql3)
     var create3 = statement3?.execute(sql3)
     val sql4 = "CREATE TABLE IF NOT EXISTS BillingProduct(billId INT,productId INT,cost INT,quantity INT,FOREIGN KEY(productId) REFERENCES Product(productId),FOREIGN KEY(billId) REFERENCES Billing(billId),PRIMARY KEY(billId,productId));"

@@ -1,7 +1,6 @@
 package com.airline;
 
 
-
 public class International extends Airlines {
     private String countryCode;
     private double ticketCost;
@@ -32,12 +31,12 @@ public class International extends Airlines {
 
     @Override
     public void bookTicket(int noOfTickets) {
-        System.out.println("Air Id:"+getAirID());
-        System.out.println("Source:"+getSource());
-        System.out.println("Destination"+getDestination());
-        System.out.println("Cost per person:"+getTicketCost());
-        System.out.println("number of passenges are"+noOfTickets);
-System.out.println("The total ticket cost is"+ticketCost*noOfTickets);
+        System.out.println("Air Id:" + getAirID());
+        System.out.println("Source:" + getSource());
+        System.out.println("Destination" + getDestination());
+        System.out.println("Cost per person:" + getTicketCost());
+        System.out.println("number of passenges are" + noOfTickets);
+        System.out.println("The total ticket cost is" + ticketCost * noOfTickets);
     }
 }
 

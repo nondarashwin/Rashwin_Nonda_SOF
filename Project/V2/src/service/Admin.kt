@@ -116,7 +116,7 @@ class Admin {
         val storeId = scanner.nextInt()
         scanner.nextLine()
         print("Enter Mail Id")
-        val mail=scanner.nextLine()
+        val mail = scanner.nextLine()
         print("Enter number of products Bought")
         val n = scanner.nextInt()
 
@@ -130,7 +130,7 @@ class Admin {
             if (product != null) {
                 product.quantity = scanner.nextInt()
                 val stock = searchStock(product.id, storeId)
-                if (stock?.stock!! > product.quantity && product.quantity>0) {
+                if (stock?.stock!! > product.quantity && product.quantity > 0) {
                     products.add(product)
                     val a = stock.stock.minus(product.quantity)
                     stock.setterStock(a)
@@ -141,7 +141,7 @@ class Admin {
             }
         }
         val id = insert(Billing(0, storeId, products, -1))
-        displayBill(id,mail)
+        displayBill(id, mail)
     }
 
     fun updateProductDetails() {
@@ -176,9 +176,9 @@ class Admin {
         }
     }
 
-    private fun displayBill(id: Int, mailId:String) {
+    private fun displayBill(id: Int, mailId: String) {
         val bills = selectBillingRecord()
-        var message="""Dear Customer,<br>this is your bill for today's shopping<br>
+        var message = """Dear Customer,<br>this is your bill for today's shopping<br>
             <h5>Bill ID=$id</h5>
             <table border=1px><tr><th>Product Name</th><th>Quantity</th><th>Unit Cost</th><th>totals</th></tr>
                 """
@@ -190,18 +190,18 @@ class Admin {
                 println("total Amount:${i.amount}")
                 println("ProductName Quantity UnitCost Cost")
                 for (j in i.productIds) {
-                    val p=searchProduct(j.id)
+                    val p = searchProduct(j.id)
                     if (p != null) {
                         println("${p.name} ${j.quantity} ${j.cost} ${j.quantity * j.cost}")
-                        val temp=message
-                        message=temp.plus("<tr><td>${p.name}</td><th>${j.quantity}</th><th>${j.cost}</th><th>${j.quantity * j.cost}</th></tr>")
+                        val temp = message
+                        message = temp.plus("<tr><td>${p.name}</td><th>${j.quantity}</th><th>${j.cost}</th><th>${j.quantity * j.cost}</th></tr>")
                     }
 
                 }
-                val temp=message
-                message=temp.plus("<tr><th>  </th>  <th>  </th><th>  </th><th>Amount=${i.amount}</th></tr></table><br>yours sincerely<br>Your Favourite Store ")
+                val temp = message
+                message = temp.plus("<tr><th>  </th>  <th>  </th><th>  </th><th>Amount=${i.amount}</th></tr></table><br>yours sincerely<br>Your Favourite Store ")
 
-                Transport.send(plainMail(message,mailId))
+                Transport.send(plainMail(message, mailId))
             }
         }
         checkStock()

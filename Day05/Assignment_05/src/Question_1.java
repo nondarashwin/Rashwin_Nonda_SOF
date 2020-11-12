@@ -71,7 +71,7 @@ public class Question_1 {
         c.setResidentialAdress(new Address("lane 1", "managalore"));
         System.out.println(c.getCustomerName());
         System.out.println(c.getResidentialAdress());
-        Customer c1=new Customer("ramu",new Address("lane2","Mangalore"));
+        Customer c1 = new Customer("ramu", new Address("lane2", "Mangalore"));
         c1.getCustomerDetails();
     }
 }

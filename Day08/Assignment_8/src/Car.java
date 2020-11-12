@@ -1,12 +1,12 @@
 import java.io.Serializable;
 
 class Engine implements Serializable {
-    private transient String  engineNo="0000";
+    private transient String engineNo = "0000";
     private int cubicCapacity;
 
     public Engine() {
-        this.engineNo="0000";
-        this.cubicCapacity=0;
+        this.engineNo = "0000";
+        this.cubicCapacity = 0;
     }
 
     public Engine(String engineNo, int cubicCapacity) {
@@ -30,15 +30,16 @@ class Engine implements Serializable {
         this.cubicCapacity = cubicCapacity;
     }
 }
-public class Car implements Serializable{
-    private transient String registrationNo="0000";
+
+public class Car implements Serializable {
+    private transient String registrationNo = "0000";
     private String carMake;
     private Engine engine;
 
     public Car() {
-        this.registrationNo="0000";
-        this.carMake="0000";
-        this.engine=new Engine();
+        this.registrationNo = "0000";
+        this.carMake = "0000";
+        this.engine = new Engine();
     }
 
     public Car(String registrationNo, String carMake, Engine engine) {

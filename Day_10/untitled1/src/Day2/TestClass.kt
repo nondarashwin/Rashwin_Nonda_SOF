@@ -13,8 +13,8 @@ class outerClass1 {
         }
     }
 }
-fun main(args:Array<String>)
-{
-    var ob=outerClass1().nestedClass1()
+
+fun main(args: Array<String>) {
+    var ob = outerClass1().nestedClass1()
     ob.foo()
 }

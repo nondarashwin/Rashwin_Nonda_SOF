@@ -14,8 +14,8 @@ fun MutableMap<Int, ArrayList<Int>>.simpleInterest(key: Int): Int {
 
 fun main() {
     var a: MutableMap<Int, ArrayList<Int>> = mutableMapOf()
-    a.put(1000, arrayListOf(12,1))
-   // a.put(2, 2000)
+    a.put(1000, arrayListOf(12, 1))
+    // a.put(2, 2000)
     for (i in a) {
         println("principal amount=${i.value} interest=${a.simpleInterest(i.key)}")
     }

@@ -13,6 +13,226 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/73725a7f-67b9-41ad-a615-346799bdf496/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/Spring REST Demos/todo-app/src/main/java/com/manipal/demo/controller/ToDoController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/ProductService/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/ProductService/src/main/java/com/casestudy/stockupdate/controller/ProductController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/ProductService/src/main/java/com/casestudy/stockupdate/model/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/ProductService/src/main/java/com/casestudy/stockupdate/repository/ProductRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/ProductService/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/DemoApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/controller/SendEmail.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/controller/StockController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/exception/StickResponseEntityExceptionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/exception/StocksException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/exception/ToDoResponseEntityExceptionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/mail/Encrpytion.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/mail/Encryption.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/mail/MailHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/mail/SendMail.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/mail/key.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/Bill.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/BilledProduct.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/Stock.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/ViewBill.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/model/ViewBilledProduct.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/BilledProductsRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/BillsRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/ProductRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/StockRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/StoresRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/main/java/com/store/demo/repository/Views.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo/src/test/java/com/store/demo/controller/StockControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/Repository/BillRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/Repository/BilledProductRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/Repository/ProductRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/Repository/StockRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/Repository/StoreRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/controller/StockController.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/model/Bill.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/model/BilledProduct.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/model/Product.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/model/Stock.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CaseStudy/demo_kotlin/src/main/kotlin/com/store/demo/model/Store.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../Day19Assignment/pom.xml">
           <value>
             <set />
@@ -89,6 +309,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/service/Admin.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/service/SendMail.kt">
           <value>
             <set />
           </value>

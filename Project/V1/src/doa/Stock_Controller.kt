@@ -24,17 +24,19 @@ fun updateStockRecord(stock: Stock) {
     val rowsUpdated = statement.executeUpdate()
 
 }
+
 fun selectStockRecord(): ArrayList<Stock> {
     val sql = "SELECT * FROM stock"
     val statement: Statement = conn!!.createStatement()
-    val result=statement.executeQuery(sql)
-    val stock:ArrayList<Stock> = ArrayList()
+    val result = statement.executeQuery(sql)
+    val stock: ArrayList<Stock> = ArrayList()
     while (result.next()) {
-        stock.add(Stock(result.getInt("storeId"),result.getInt("productId"),result.getInt("stock")))
+        stock.add(Stock(result.getInt("storeId"), result.getInt("productId"), result.getInt("stock")))
     }
     return stock
 }
-fun deleteStockRecord(id:Int,type:String) {
+
+fun deleteStockRecord(id: Int, type: String) {
     var sql = "DELETE FROM stock WHERE storeId=$id"
     if (type == "Product") {
         sql = "DELETE FROM stock WHERE productId=$id"

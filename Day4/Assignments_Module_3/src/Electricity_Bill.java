@@ -29,7 +29,7 @@ public class Electricity_Bill {
                 }
 
             }
-            System.out.format("The Bill Amount is %.2f" , cost);
+            System.out.format("The Bill Amount is %.2f", cost);
 
 
         } else {

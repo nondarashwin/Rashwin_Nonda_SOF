@@ -8,7 +8,7 @@ class Vehicle {
 
 }
 
-fun Vehicle.stop():String {
+fun Vehicle.stop(): String {
 
     return "Vehicle Stopped"
 }

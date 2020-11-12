@@ -20,12 +20,12 @@ public class PT_DRILL {
                     arranged[i][j] = lines[i * k + j];
                 }
             System.out.print("Middle Column :");
-            for(int i=0;i<k;i++)
-                    System.out.print(arranged[i][k/2]+' ');
+            for (int i = 0; i < k; i++)
+                System.out.print(arranged[i][k / 2] + ' ');
             System.out.println();
             System.out.println("Middle Row :");
-            for(int i=0;i<k;i++)
-                System.out.print(arranged[k/2][i]+' ');
+            for (int i = 0; i < k; i++)
+                System.out.print(arranged[k / 2][i] + ' ');
             System.out.println();
 
         }

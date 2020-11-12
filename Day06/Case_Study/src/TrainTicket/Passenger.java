@@ -51,9 +51,9 @@ public class Passenger implements Comparable<Passenger> {
     }
 
     public void setGender(char gender) throws InvalidInputException {
-        if(gender=='M'||gender=='F')
-        this.gender = gender;
-        else{
+        if (gender == 'M' || gender == 'F')
+            this.gender = gender;
+        else {
             throw new InvalidInputException("The Gender should be M/F");
         }
     }

@@ -95,7 +95,7 @@ public class Book {
         if (flag) {
             this.category = category;
 
-        }else
+        } else
             throw new InvalidInputException("The Category Not found");
 
 
@@ -109,8 +109,7 @@ public class Book {
         if (price > 0) {
             this.price = price;
 
-        }
-        else
+        } else
             throw new InvalidInputException("Price Cant be negative");
 
     }

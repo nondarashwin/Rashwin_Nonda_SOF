@@ -2,7 +2,7 @@ package TrainTicket;
 
 public class Train {
     private int trainNo;
-    private String source,destination,trainName;
+    private String source, destination, trainName;
     private double price;
 
     public Train(int trainNo, String source, String destination, String trainName, double price) throws InvalidInputException {
@@ -50,9 +50,9 @@ public class Train {
     }
 
     public void setPrice(double price) throws InvalidInputException {
-        if(price>=0){
-        this.price = price;}
-        else {
+        if (price >= 0) {
+            this.price = price;
+        } else {
             throw new InvalidInputException("Price Can't be Negative");
         }
     }

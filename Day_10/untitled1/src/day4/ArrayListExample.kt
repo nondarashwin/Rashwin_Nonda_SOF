@@ -1,12 +1,10 @@
 package day4
 
 
-
-fun main()
-{
-    var arraylist1=ArrayList<String>()
-    var arraylist2=ArrayList<String>(4)
-    var arraylist3=ArrayList<String>(arraylist1)
+fun main() {
+    var arraylist1 = ArrayList<String>()
+    var arraylist2 = ArrayList<String>(4)
+    var arraylist3 = ArrayList<String>(arraylist1)
     //print(arraylist2.size)
     arraylist1.add("Bangalore")
     arraylist1.add("Delhi")
@@ -30,10 +28,9 @@ fun main()
     printArrayList(arraylist3)
 }
 
-fun <T> printArrayList(list: ArrayList<T>){
-    var tmp=list.iterator()
-    while(tmp.hasNext())
-    {
+fun <T> printArrayList(list: ArrayList<T>) {
+    var tmp = list.iterator()
+    while (tmp.hasNext()) {
         print(" " + tmp.next())
     }
 

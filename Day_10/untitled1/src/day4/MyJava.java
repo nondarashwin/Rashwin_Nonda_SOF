@@ -20,14 +20,12 @@ public class MyJava {
         this.lastname = lastname;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         System.out.println(fun("Swarna", 5));
 
     }
 
-    public static String fun(String a, int number )
-    {
-        return "Welcome " + a + "to the learning " + "You are the " + number +" Learner ";
+    public static String fun(String a, int number) {
+        return "Welcome " + a + "to the learning " + "You are the " + number + " Learner ";
     }
 }

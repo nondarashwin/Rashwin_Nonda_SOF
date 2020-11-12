@@ -3,7 +3,7 @@ package PatientHashSet;
 import java.util.*;
 
 class Patient implements Comparable<Patient> {
-    private int patientId,age;
+    private int patientId, age;
     private String name;
 
     @Override
@@ -22,9 +22,9 @@ class Patient implements Comparable<Patient> {
     }
 
     public Patient() {
-        this.age=0;
-        this.patientId=0;
-        this.name="";
+        this.age = 0;
+        this.patientId = 0;
+        this.name = "";
     }
 
     public int getPatientId() {
@@ -60,33 +60,33 @@ class Patient implements Comparable<Patient> {
 
     @Override
     public int compareTo(Patient patient) {
-        return this.patientId-patient.patientId;
+        return this.patientId - patient.patientId;
     }
 }
 
-class SortByAge implements Comparator<Patient>{
+class SortByAge implements Comparator<Patient> {
 
     @Override
     public int compare(Patient patient, Patient patient1) {
-        return patient.getAge()-patient1.getAge();
+        return patient.getAge() - patient1.getAge();
     }
 }
 
 public class TestPatientList {
     public static void main(String[] args) {
-        LinkedHashSet<Patient> patients=new LinkedHashSet<>();
-        patients.add(new Patient(5,23,"Rashwin"));
-        patients.add(new Patient(5,23,"Rashwin"));
-        patients.add(new Patient(2,24,"Rashmi"));
-        System.out.println("The Total Patients:"+patients.size());
-        Iterator it=patients.iterator();
-        while(it.hasNext()){
-            Patient patient=(Patient)it.next();
-            System.out.println("Patient Id:"+patient.getPatientId());
-            System.out.println("Patient Name:"+patient.getName());
-            System.out.println("Patient Age:"+patient.getAge());
+        LinkedHashSet<Patient> patients = new LinkedHashSet<>();
+        patients.add(new Patient(5, 23, "Rashwin"));
+        patients.add(new Patient(5, 23, "Rashwin"));
+        patients.add(new Patient(2, 24, "Rashmi"));
+        System.out.println("The Total Patients:" + patients.size());
+        Iterator it = patients.iterator();
+        while (it.hasNext()) {
+            Patient patient = (Patient) it.next();
+            System.out.println("Patient Id:" + patient.getPatientId());
+            System.out.println("Patient Name:" + patient.getName());
+            System.out.println("Patient Age:" + patient.getAge());
         }
-        }
-
     }
+
+}
 

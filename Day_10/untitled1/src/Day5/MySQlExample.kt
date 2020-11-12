@@ -10,12 +10,14 @@ object MySQLDatabaseExampleKotlin {
     internal var conn: Connection? = null
     internal var username = "root" // provide the username
     internal var password = "Hello123#" // provide the corresponding password
-    @JvmStatic fun main(args: Array<String>) {
+    @JvmStatic
+    fun main(args: Array<String>) {
         // make a connection to MySQL Server
         getConnection()
         // execute the query via connection object
         executeMySQLQuery()
     }
+
     fun executeMySQLQuery() {
         var stmt: Statement? = null
         var resultset: ResultSet? = null
@@ -58,6 +60,7 @@ object MySQLDatabaseExampleKotlin {
             }
         }
     }
+
     /**
      * This method makes a connection to MySQL Server
      * In this example, MySQL Server is running in the local host (so 127.0.0.1)

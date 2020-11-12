@@ -18,11 +18,11 @@ public class SUMOFODDDIGITS {
 
     public static void main(String[] args) {
         int n;
-        Scanner sc=new Scanner(System.in);
-        n=sc.nextInt();
-        SUMOFODDDIGITS sodd=new SUMOFODDDIGITS();
-        int output=sodd.sumOddDigits(n);
-        if(output==-1)
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        SUMOFODDDIGITS sodd = new SUMOFODDDIGITS();
+        int output = sodd.sumOddDigits(n);
+        if (output == -1)
             System.out.println("Invalid input");
         else
             System.out.println(output);

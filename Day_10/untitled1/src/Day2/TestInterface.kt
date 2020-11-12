@@ -1,24 +1,21 @@
 package Day2
 
 
-
-open class Bird{
-    open var color=""
-    open fun fly()
-    {
+open class Bird {
+    open var color = ""
+    open fun fly() {
         println("Bird is flying.....")
     }
 }
 
-interface Sparrow
-{
-    fun fly()
-    {
+interface Sparrow {
+    fun fly() {
         println("Sparrow is flying.....")
     }
 }
-class PeaCock:Bird(),Sparrow{
-    override var color="Blue"
+
+class PeaCock : Bird(), Sparrow {
+    override var color = "Blue"
     override fun fly() {
         super<Bird>.fly()
         super<Sparrow>.fly()
@@ -27,8 +24,8 @@ class PeaCock:Bird(),Sparrow{
     }
 
 }
-fun main(args:Array<String>)
-{
-    var p=PeaCock()
+
+fun main(args: Array<String>) {
+    var p = PeaCock()
     p.fly()
 }

@@ -14,24 +14,22 @@ fun main(array: Array<String>) {
     var s: String = read.next()
     println("u gave $s")
     println(langauge + " " + noidea)
-    var result:String = if (10 > 20) "10 is lwess than 20" else if (10 == 20) "10 is equal" else "da"
+    var result: String = if (10 > 20) "10 is lwess than 20" else if (10 == 20) "10 is equal" else "da"
     println(result)
     var num1 = 10
     var num2 = 20
     var num3 = 30
     val result1: String = if (num1 > num2) {
-        val max:Int=if (num1 > num3){
+        val max: Int = if (num1 > num3) {
             num1
-        }
-        else{
+        } else {
             num3
         }
         "$max"
     } else {
-        val max:Int=if (num2 > num3){
+        val max: Int = if (num2 > num3) {
             num2
-        }
-        else{
+        } else {
             num3
         }
         "$max"

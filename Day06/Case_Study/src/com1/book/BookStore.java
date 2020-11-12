@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookStore {
-    ArrayList<Book> books=new ArrayList<>();
+    ArrayList<Book> books = new ArrayList<>();
 
     public void addBook(Book b) {
         books.add(b);
@@ -21,7 +21,7 @@ public class BookStore {
 
     public void searchByTitle(String title) {
         boolean flag = false;
-        if (books == null ||books.size()==0) {
+        if (books == null || books.size() == 0) {
             System.out.println("no books found");
             return;
         }
@@ -37,7 +37,7 @@ public class BookStore {
 
     public void searchByAuthor(String author) {
         boolean flag = false;
-        if (books == null ||books.size()==0) {
+        if (books == null || books.size() == 0) {
             System.out.println("no books found");
             return;
         }
@@ -54,7 +54,7 @@ public class BookStore {
     public void updateBook(String bookId) throws InvalidInputException {
         boolean flag = false;
         int i;
-        if (books == null ||books.size()==0) {
+        if (books == null || books.size() == 0) {
             System.out.println("no books found");
             return;
         }
@@ -105,7 +105,7 @@ public class BookStore {
 
     public void displayBook(String bookId) {
         boolean flag = false;
-        if (books == null ||books.size()==0) {
+        if (books == null || books.size() == 0) {
             System.out.println("no books found");
             return;
         }
@@ -120,7 +120,7 @@ public class BookStore {
     }
 
     public void displayAll() {
-        if (books == null ||books.size()==0){
+        if (books == null || books.size() == 0) {
             System.out.println("no books found");
         } else {
             for (Book book : books) {

@@ -52,7 +52,7 @@ class Customer {
     public Customer(String customerName, Address residentialAdress) {
         this.customerName = customerName;
         this.residentialAdress = residentialAdress;
-        this.officialAddress=residentialAdress;
+        this.officialAddress = residentialAdress;
     }
 
     public Customer(String customerName, Address residentialAdress, Address officialAddress) {
@@ -80,7 +80,7 @@ class Customer {
     public void getCustomerDetails() {
         System.out.println("Customer :" + this.customerName);
         System.out.println("Residential Address :" + this.residentialAdress.getAdressdetails());
-        System.out.println("Office Address :"+this.officialAddress.getAdressdetails());
+        System.out.println("Office Address :" + this.officialAddress.getAdressdetails());
     }
 }
 
@@ -91,9 +91,9 @@ public class Question_1 {
         c.setResidentialAdress(new Address("lane 1", "managalore"));
         System.out.println(c.getCustomerName());
         System.out.println(c.getResidentialAdress());
-        Customer c1=new Customer("ramu",new Address("lane2","Mangalore"));
+        Customer c1 = new Customer("ramu", new Address("lane2", "Mangalore"));
         c1.getCustomerDetails();
-        Customer c2=new Customer("ramu",new Address("lane2","Mangalore"),new Address("lane2","Mumbai"));
+        Customer c2 = new Customer("ramu", new Address("lane2", "Mangalore"), new Address("lane2", "Mumbai"));
         c2.getCustomerDetails();
     }
 }

@@ -8,14 +8,13 @@ import java.lang.ArithmeticException
 fun main() {
     try {
         checkAge(15)
+    } catch (e: ArithmeticException) {
+        println(e)
     }
-
-    catch(e:ArithmeticException){println(e)}
 }
 
-fun checkAge(age:Int)
-{
-    if(age>18)
+fun checkAge(age: Int) {
+    if (age > 18)
         println("Eligible to Vote")
     else
         throw ArithmeticException("You are not eligible to vote")

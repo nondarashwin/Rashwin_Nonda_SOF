@@ -2,6 +2,7 @@ package doa
 
 import java.sql.*
 import java.util.*
+
 var conn: Connection? = null
 fun getConnection1() {
     val connectionProps = Properties()
@@ -23,7 +24,6 @@ fun getConnection1() {
 }
 
 
-fun connectionClose()
-{
+fun connectionClose() {
     conn?.close()
 }

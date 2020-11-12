@@ -95,19 +95,21 @@ public class Ticket {
         ticket.append("Name\tAge\tGender\tFare\n");
         for (Passenger passenger : passengers.keySet()) {
             //System.out.println("genrate ticket "+passenger.getName());
-            ticket.append(passenger.getName() + "\t" + passenger.getAge() + "\t" + passenger.getGender()+ "\t" + passengers.get(passenger)+ "\n");
+            ticket.append(passenger.getName() + "\t" + passenger.getAge() + "\t" + passenger.getGender() + "\t" + passengers.get(passenger) + "\n");
         }
-        ticket.append("Total Price:"+calculateTotalTicketPrice());
+        ticket.append("Total Price:" + calculateTotalTicketPrice());
         return ticket;
     }
-public void writeTicket() throws IOException {
-        StringBuilder ticket=generateticket();
-    File f1=new File(getPnr()+".txt");
-    f1.createNewFile();
-    BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream(f1));
-    bos.write(ticket.toString().getBytes());
-    bos.close();
-}
+
+    public void writeTicket() throws IOException {
+        StringBuilder ticket = generateticket();
+        File f1 = new File(getPnr() + ".txt");
+        f1.createNewFile();
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(f1));
+        bos.write(ticket.toString().getBytes());
+        bos.close();
+    }
+
     private double calculateTotalTicketPrice() {
         double cost = 0;
         for (Passenger passenger : passengers.keySet()) {
