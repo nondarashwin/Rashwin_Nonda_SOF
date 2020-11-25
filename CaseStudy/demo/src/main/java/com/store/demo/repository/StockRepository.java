@@ -13,7 +13,7 @@ public interface StockRepository extends JpaRepository<Stock, Integer> {
 
     List<Stock> findByProductId(int id);
 
-    @Query("select stock from Stock stock where stock.stock<=10")
+    @Query("select stock from Stock stock where stock.stock<=(select avg(billedProduct.quantity) from BilledProduct billedProduct where billedProduct.productId=stock.productId)")
     List<Stock> findByStock();
 
     @Query("select stock from Stock stock where stock.productId=?1 and stock.storeId=?2")

@@ -47,7 +47,7 @@ class Bill {
         this.billedProducts = billedProducts
     }
 
-    constructor(id: Int, storeId: Int, totalAmount: Int, emailId: String?, billedProducts: List<BilledProduct>) {
+    constructor(id: Int, storeId: Int, totalAmount: Int, emailId: String?, billedProducts: MutableList<BilledProduct>) {
         this.id = id
         this.storeId = storeId
         this.totalAmount = totalAmount

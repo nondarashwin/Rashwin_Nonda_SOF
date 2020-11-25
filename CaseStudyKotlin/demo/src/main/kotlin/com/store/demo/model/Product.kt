@@ -12,7 +12,7 @@ class Product {
     var type: String? = null
     var info: String? = null
     var cost = 0
-    var isContinuity = false
+    var continuity = false
 
     constructor(id: Int, name: String?, type: String?, info: String?, cost: Int, continuity: Boolean) {
         this.id = id
@@ -20,7 +20,7 @@ class Product {
         this.type = type
         this.info = info
         this.cost = cost
-        isContinuity = continuity
+        this.continuity = continuity
     }
 
     constructor() {}
@@ -32,7 +32,7 @@ class Product {
                 ", type='" + type + '\'' +
                 ", info='" + info + '\'' +
                 ", cost=" + cost +
-                ", continuity=" + isContinuity +
+                ", continuity=" + continuity +
                 '}'
     }
 }

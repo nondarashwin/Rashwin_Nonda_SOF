@@ -1,59 +1,57 @@
-package com.store.demo.mail;
+package com.store.demo.mail
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
 
-public class Encryption {
-    private static String keys = "";
-
-    public Encryption() {
-
+class Encryption {
+    constructor() {}
+    constructor(key: String) {
+        keys = key
     }
 
-    public Encryption(String key) {
-        keys = key;
-    }
-
-    public String encrypt(String messageString, int key) {
-        String codedString = "";
-        char[] charArray = messageString.toCharArray();
-
-        for (int i = 0; i < messageString.length(); i++) {
+    fun encrypt(messageString: String, key: Int): String {
+        var codedString = ""
+        val charArray = messageString.toCharArray()
+        for (i in 0 until messageString.length) {
             //System.out.println("before="+charArray[i]);
-            charArray[i] += key;
+            charArray[i] += key
             //System.out.println("after="+charArray[i]);
-            String temp = codedString;
+            val temp = codedString
             //System.out.println(temp);
-            codedString = temp + charArray[i];
+            codedString = temp + charArray[i]
         }
         //codedString=charArray.toString();
-        return codedString;
+        return codedString
     }
 
-    public String decrypt(String codedString) throws IOException {
-        String messageString = "";
-        File file = new File("/home/rashwin/Project/Rashwin_Nonda_SOF/CaseStudy/demo/src/main/java/com/store/demo/mail/key.txt");
-        FileInputStream fileInputStream = new FileInputStream(file);
-        keys = new String(fileInputStream.readAllBytes());
+    @Throws(IOException::class)
+    fun decrypt(codedString: String): String {
+        var messageString = ""
+        val file = File("/home/rashwin/Project/Rashwin_Nonda_SOF/CaseStudy/demo/src/main/java/com/store/demo/mail/key.txt")
+        val fileInputStream = FileInputStream(file)
+        keys = String(fileInputStream.readAllBytes())
         //System.out.println(keys);
-        char[] keyArray = keys.toCharArray();
-        int key = 0;
-        for (char temp : keyArray) {
-            key += temp;
+        val keyArray = keys.toCharArray()
+        var key = 0
+        for (temp in keyArray) {
+            key += temp.toInt()
         }
-        key %= 100;
-
-        char[] charArray = codedString.toCharArray();
-        for (int i = 0; i < codedString.length(); i++) {
-            charArray[i] -= key;
-            String temp = messageString;
-            messageString = temp + charArray[i];
+        key %= 100
+        val charArray = codedString.toCharArray()
+        for (i in 0 until codedString.length) {
+            charArray[i] -= key
+            val temp = messageString
+            messageString = temp + charArray[i]
         }
-
-        return messageString;
+        return messageString
     }
 
-
+    companion object {
+        private var keys = ""
+    }
 }
 
+private operator fun CharArray.set(i: Int, value: Int) {
+
+}

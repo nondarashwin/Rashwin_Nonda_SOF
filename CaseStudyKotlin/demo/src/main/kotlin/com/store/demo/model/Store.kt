@@ -10,13 +10,13 @@ class Store {
     var id = 0
     var name: String? = null
     var address: String? = null
-    var isContinuity = false
+    var continuity = true
 
     constructor(id: Int, name: String?, address: String?, continuity: Boolean) {
         this.id = id
         this.name = name
         this.address = address
-        isContinuity = continuity
+        this.continuity = continuity
     }
 
     constructor() {}
@@ -26,7 +26,7 @@ class Store {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", continuity=" + isContinuity +
+                ", continuity=" + continuity +
                 '}'
     }
 }

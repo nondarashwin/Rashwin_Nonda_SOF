@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @EnableAutoConfiguration
 @RestController
 @RequestMapping("/api")
@@ -32,22 +32,26 @@ public class StockController {
 
     public void sendMailToAdmin(List<Stock> stocks) {
 
-        String message = "Dear Admin,<br><table border=1px><tr><th>Store Name</th><th>Product Name</th><th>Stock Remaining</th></tr>";
+        String message = "Dear Admin,<br>Requires stock update as soon as possible.<br><table border=1px><tr><th>Store Name</th><th>Product Name</th><th>Stock Remaining</th></tr>";
         for (Stock stock : stocks) {
-            //System.out.println(stock.getStoreId());
-            //System.out.println(storesRepository.findById(stock.getStoreId()).orElseThrow(() -> new StocksException("Store Not Found ")));
             Store store = storesRepository.findById(stock.getStoreId()).orElseThrow(() -> new StocksException("Store Not Found "));
             Product product = productRepository.findById(stock.getProductId()).orElseThrow(() -> new StocksException("Product Not Found"));
             String temp = message + "<tr><td>" + store.getName() + "</td><th>" + product.getName() + "</td><th>" + stock.getStock() + "</th></tr>";
-            message= temp;
+            message = temp;
         }
 
         sendMail.sendMail("rashwinnonda@gmail.com", "Stock Update", message + "</table><br>your sincerely,<br>Machine");
     }
 
     public void sendMailToCustomer(Bill bill) {
+
+        String emailPattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        if (!bill.getEmailId().matches(emailPattern)) {
+            //throw new StocksException("Emailid is not valid");
+            return;
+        }
         Store store = storesRepository.findById(bill.getStoreId()).orElseThrow(() -> new StocksException("Store NotFound"));
-        String message = "Dear Customer,<br>this is your bill for today's shopping<br><h5>Bill ID=" + bill.getId() + "/h5><h5>Store Name" + store.getName() + "</h5> <table border=1px><tr><th>Product Name</th><th>Quantity</th><th>Unit Cost</th><th>totals</th></tr>";
+        String message = "Dear Customer,<br>this is your bill for today's shopping<br><h5>Bill ID=" + bill.getId() + "</h5><h5>Store Name" + store.getName() + "</h5> <table border=1px><tr><th>Product Name</th><th>Quantity</th><th>Unit Cost</th><th>totals</th></tr>";
         for (BilledProduct billedProduct : bill.getBilledProducts()) {
             String temp = message;
             Product product = productRepository.findById(billedProduct.getProductId()).orElseThrow(() -> new StocksException("Product Not Found"));
@@ -57,15 +61,16 @@ public class StockController {
 
     }
 
-    public double totalAmount(List<BilledProduct> viewBilledProducts){
-    double total=0;
-    for(BilledProduct viewBilledProduct:viewBilledProducts){
-        Product product=productRepository.findById(viewBilledProduct.getProductId()).orElseThrow(()->new StocksException("Product Not Found"));
-        total+=(product.getCost()*viewBilledProduct.getQuantity());
+    public double totalAmount(List<BilledProduct> viewBilledProducts) {
+        double total = 0;
+        for (BilledProduct viewBilledProduct : viewBilledProducts) {
+            Product product = productRepository.findById(viewBilledProduct.getProductId()).orElseThrow(() -> new StocksException("Product Not Found"));
+            total += (product.getCost() * viewBilledProduct.getQuantity());
 
+        }
+        return total;
     }
-    return total;
-}
+
     public void checkStock(List<BilledProduct> viewBilledProducts, int storeID) {
         for (BilledProduct temp : viewBilledProducts) {
             Stock stock = stockRepository.findByCondition(temp.getProductId(), storeID);
@@ -85,13 +90,8 @@ public class StockController {
 
     @DeleteMapping(value = "/product/id/{id}")
     public ResponseEntity<Product> deleteProducts(@PathVariable int id) {
-        Product product = productRepository.findById(id).orElseThrow(()->new StocksException("Product Not found"));
+        Product product = productRepository.findById(id).orElseThrow(() -> new StocksException("Product Not found"));
         product.setContinuity(false);
-        List<Stock> stocks = stockRepository.findByProductId(product.getId());
-        for (Stock stock : stocks) {
-            stockRepository.delete(stock);
-        }
-
         return addProduct(product);
 
 
@@ -116,7 +116,7 @@ public class StockController {
 
     @GetMapping(value = "/product/id/{id}")
     public Product retrieveByProducts(@PathVariable int id) {
-        return productRepository.findById(id).orElseThrow();
+        return productRepository.findById(id).orElseThrow(() -> new StocksException("Product Not Found"));
     }
 
     @GetMapping(value = "/product/name/{name}")
@@ -137,7 +137,7 @@ public class StockController {
 
     @GetMapping("/stock/isenough")
     public List<Stock> checkStockAvailability() {
-        List<Stock> stocks=stockRepository.findByStock();
+        List<Stock> stocks = stockRepository.findByStock();
         //MailHandler mailHandler=new MailHandler();
         sendMailToAdmin(stocks);
         return stocks;
@@ -145,11 +145,11 @@ public class StockController {
 
     @GetMapping(value = "/bills")
     public List<Bill> retrieveAllBills() {
-        List<Bill> bills=billsRepository.findAll();
+        List<Bill> bills = billsRepository.findAll();
 
-        for(Bill bill:bills){
+        for (Bill bill : bills) {
 
-            List<BilledProduct> billedProducts=billedProductsRepository.findByBillId(bill.getId());
+            List<BilledProduct> billedProducts = billedProductsRepository.findByBillId(bill.getId());
             bill.setBilledProducts(billedProducts);
         }
         return bills;
@@ -157,12 +157,12 @@ public class StockController {
 
     @GetMapping(value = "/bill/id/{id}")
     public Bill retrieveBill(@PathVariable int id) {
-        Bill bill=billsRepository.findById(id).orElseThrow(()->new StocksException("Bill Id not found"));
-        if(bill==null){
+        Bill bill = billsRepository.findById(id).orElseThrow(() -> new StocksException("Bill Id not found"));
+        if (bill == null) {
             throw new StocksException("Bill Id Not found");
         }
 
-        List<BilledProduct> billedProducts=billedProductsRepository.findByBillId(bill.getId());
+        List<BilledProduct> billedProducts = billedProductsRepository.findByBillId(bill.getId());
         bill.setBilledProducts(billedProducts);
         return bill;
 
@@ -173,12 +173,12 @@ public class StockController {
         return stockRepository.findAll();
     }
 
-    @GetMapping(value = "/stock/store/id/{id}")
+    @GetMapping(value = "/store/stock/id/{id}")
     public List<Stock> retrieveStockByStoreId(@PathVariable int id) {
         return stockRepository.findByStoreId(id);
     }
 
-    @GetMapping(value = "/stock/product/id/{id}")
+    @GetMapping(value = "/product/stock/id/{id}")
     public List<Stock> retrieveStockByProductId(@PathVariable int id) {
         return stockRepository.findByProductId(id);
     }
@@ -186,10 +186,8 @@ public class StockController {
     @PostMapping("/stock")
     public ResponseEntity<Stock> addStock(@RequestBody Stock stock) {
 
-       // System.out.println(stock.toString());
-        if (stock.getStock() < 0) {
-            throw new StocksException("stock cant be negative");
-        }
+        // System.out.println(stock.toString());
+
         Product product = productRepository.findById(stock.getProductId()).orElseThrow(() -> new StocksException("Product Not Found"));
         if (product == null || !product.isContinuity()) {
             throw new StocksException("Product Not Found");
@@ -204,7 +202,9 @@ public class StockController {
             stockRepository.delete(tempStock);
             stock.setStock(stock.getStock() + tempStock.getStock());
         }
-
+        if (stock.getStock() < 0) {
+            throw new StocksException("stock cant be negative");
+        }
         Stock stock1 = stockRepository.save(stock);
 
         HttpHeaders headers = new HttpHeaders();
@@ -214,15 +214,16 @@ public class StockController {
     }
 
 
-
     @GetMapping(value = "/store")
     public List<Store> retrieveAllStores() {
         return storesRepository.findAll();
     }
+
     @GetMapping(value = "/store/id/{id}")
     public Store retrieveStoresById(@PathVariable int id) {
-        return storesRepository.findById(id).orElseThrow(()->new StocksException("Store Not Found"));
+        return storesRepository.findById(id).orElseThrow(() -> new StocksException("Store Not Found"));
     }
+
     @PostMapping("/store")
     public ResponseEntity<Store> addStore(@RequestBody Store store) {
         //store.setContinuity(true);
@@ -243,28 +244,29 @@ public class StockController {
 
     @PostMapping("/bill")
     public ResponseEntity<Bill> addBill(@RequestBody Bill bill) {
+       /*
+       if (!bill.getEmailId().matches(emailPattern)) {
+            //throw new StocksException("Emailid is not valid");
+            return;
+        }*/
         checkStock(bill.getBilledProducts(), bill.getStoreId());
         bill.setTotalAmount((int) totalAmount(bill.getBilledProducts()));
-        //Bill bill = new Bill();
-        //bill.setStoreId(viewBill.getStoreId());
-        //System.out.println(bill.toString());
-        //bill.setTotalAmount(viewBill.getAmount());
-        //System.out.println(bill.toString());
         Bill bill1 = billsRepository.save(bill);
         bill.setId(bill1.getId());
-        List<BilledProduct> billedProducts =bill.getBilledProducts();
-        List<BilledProduct> billedProducts1=new ArrayList<>();
+        List<BilledProduct> billedProducts = bill.getBilledProducts();
+        List<BilledProduct> billedProducts1 = new ArrayList<>();
         for (BilledProduct temp : billedProducts) {
             Stock stock = stockRepository.findByCondition(temp.getProductId(), bill1.getStoreId());
             if (stock != null || (stock.getStock() - temp.getQuantity()) >= 0) {
 
-                    stockRepository.delete(stock);
-                    stock.setStock(stock.getStock() - temp.getQuantity());
-                    stockRepository.save(stock);
-                Product product=productRepository.findById(stock.getProductId()).orElseThrow(()->new StocksException("Product Not Found"));
-                    temp.setCost(product.getCost());
-                    billedProducts1.add(temp);
-                    billedProductsRepository.save(temp);
+                stockRepository.delete(stock);
+                stock.setStock(stock.getStock() - temp.getQuantity());
+                stockRepository.save(stock);
+                Product product = productRepository.findById(stock.getProductId()).orElseThrow(() -> new StocksException("Product Not Found"));
+                temp.setCost(product.getCost());
+                temp.setBillId(bill1.getId());
+                billedProducts1.add(temp);
+                billedProductsRepository.save(temp);
 
             } else {
                 //billsRepository.delete(bill1);
@@ -273,7 +275,7 @@ public class StockController {
 
         }
         bill1.setBilledProducts(billedProducts1);
-       sendMailToCustomer(bill1);
+        sendMailToCustomer(bill1);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Response-from", "ProductValue");
 
