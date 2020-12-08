@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import axios from "axios";
-import * as queryString from "@babel/core";
+import LoginVerifier from "./LoginVerifier";
+import Navbar from "./Navbar";
 
 class AddProduct extends Component {
     state = {
@@ -33,7 +33,7 @@ class AddProduct extends Component {
                 console.log(res);
                 console.log(res.data);
             })
-        window.location.href="/product"
+        window.location.href="/Product"
 
     }
 
@@ -54,25 +54,27 @@ class AddProduct extends Component {
     render() {
         console.log("yes")
         return (
+            <div>
+            <LoginVerifier check="admin"/>
+        <Navbar/>
             <div className="row">
                 <div className="col-3"></div>
                 <div className="col">
             <div className="jumbotron" style={{backgroundColor:"white",padding:"10px",align:"center",border: "3px solid black",margin: 0,width:"400px",textAlign:"left",
                 position: "absolute"}}>
+                <div align="center"><img width="100" src="/img/bitmap.png"/></div>
+               <h5> New Product</h5>
             <form onSubmit={this.handleSubmit.bind(this)}>
+                
                 <div className="form-group">
-                    <label htmlFor="id">id</label><input className="form-control"type="text" name="id" value={this.state.product.id} id="id"
-                                            onChange={this.handleEvent.bind(this)} disabled/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="name">name</label><input className="form-control"type="text" name="name" value={this.state.product.name}
+                    <label htmlFor="name">name</label><input className="form-control" type="text" name="name" value={this.state.product.name}
                                               id="name" onChange={this.handleEvent.bind(this)}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="cost">cost</label><input className="form-control"type="text" name="cost" value={this.state.product.cost}
+                    <label htmlFor="cost">cost</label><input className="form-control" type="text" name="cost" value={this.state.product.cost}
                                               id="cost" onChange={this.handleEvent.bind(this)}/></div>
                 <div className="form-group">
-                    <label htmlFor="type">category</label><input className="form-control"type="text" name="type"
+                    <label htmlFor="type">category</label><input className="form-control" type="text" name="type"
                                                   value={this.state.product.type} id="type"
                                                   onChange={this.handleEvent.bind(this)}/></div>
                 <div className="form-group">
@@ -80,7 +82,7 @@ class AddProduct extends Component {
                                               id="info" onChange={this.handleEvent.bind(this)}/></div>
                 <div className="form-group">
                     <input type="submit" className="btn btn-primary" value="Submit"/></div>
-            </form></div></div></div>
+            </form></div></div></div></div>
         )
     }
 }

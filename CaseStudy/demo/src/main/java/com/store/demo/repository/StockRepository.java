@@ -18,4 +18,5 @@ public interface StockRepository extends JpaRepository<Stock, Integer> {
 
     @Query("select stock from Stock stock where stock.productId=?1 and stock.storeId=?2")
     Stock findByCondition(int productId, int storeId);
+
 }

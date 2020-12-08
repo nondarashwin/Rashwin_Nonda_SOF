@@ -12,6 +12,13 @@ import Store from "./Store";
 import axios from "axios";
 import AddProduct from "./AddProduct";
 import AddStore from "./AddStore";
+import Login from "./Login";
+import LoginVerifier from "./LoginVerifier";
+import Navbar from "./Navbar";
+import Stock from "./Stock";
+import AddStock from "./AddStock";
+import Bill from "./Bill";
+import Home from "./Home";
 class App extends Component {
     state = {
         addProduct: true,
@@ -58,45 +65,19 @@ class App extends Component {
 
                 <Router>
                     <div>
-                        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="/">Home</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="/Product">Product</Link>
-                                </li>
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="/Stores">Stores</Link>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                       data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">
-                                        Add
-                                    </a>
-                                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <Link className="dropdown-item" to="/add/store">Store</Link>
-                                        <div className="dropdown-divider"></div>
-                                        <Link className="dropdown-item" to="/add/product">Product</Link>
-
-
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </nav>
-                        <br></br>
 
                         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                         <Switch>
                             <Route path="/Product">
-
+                                <LoginVerifier check="both"/>
+                                <Navbar/>
                                 <div className="row">
                                     <Product Products={this.state.Products} edit={this.edit} app={this}/></div>
                             </Route>
                             <Route path="/Stores">
+                                <LoginVerifier check="admin"/>
+                                <Navbar/>
                                 <div className="row">
                                     <Store/>
                                 </div>
@@ -110,14 +91,33 @@ class App extends Component {
                             </Route>
                             <Route path="/edit/store/:id" component={AddStore}>
 
+
                             </Route>
                             <Route path="/add/product">
-
                                 <AddProduct/>
                             </Route>
-                            <Route path="/">
+                            <Route path="/add/Stock">
+                                <AddStock/>
+                            </Route>
+                            <Route path="/Bill">
+                                <LoginVerifier check="store"/>
+                                <Navbar/>
+                                <Bill/>
+                            </Route>
+                            <Route path="/home">
+                                <LoginVerifier check="both"/>
+                                <Navbar/>
                                 <Home/>
                             </Route>
+                            <Route path="/Stock">
+                                <LoginVerifier check={"store"}/>
+                                <Navbar/>
+                                <Stock/>
+                            </Route>
+                            <Route path="/">
+                                <Login/>
+                            </Route>
+
 
                         </Switch>
                     </div>
@@ -130,9 +130,7 @@ class App extends Component {
     }
 }
 
-function Home() {
-    return <h2>Home</h2>
-}
+
 
 
 export default App;

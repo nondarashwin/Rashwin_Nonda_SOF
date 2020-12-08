@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @EnableAutoConfiguration
 @RestController
@@ -28,6 +30,8 @@ public class StockController {
     private StockRepository stockRepository;
     @Autowired
     private StoresRepository storesRepository;
+    @Autowired
+            private StorePasswordRepository storePasswordRepository;
     SendMail sendMail = new SendMail();
 
     public void sendMailToAdmin(List<Stock> stocks) {
@@ -42,7 +46,10 @@ public class StockController {
 
         sendMail.sendMail("rashwinnonda@gmail.com", "Stock Update", message + "</table><br>your sincerely,<br>Machine");
     }
-
+    public void sendMailToStore(StorePassword storePassword){
+        String message="Dear User,<br>userId:"+storePassword.getStoreId()+"<br>password:"+storePassword.getPassword()+"<br>your sincerely,<br>Machine";
+        sendMail.sendMail(storePassword.getMailId(),"Welcome",message);
+    }
     public void sendMailToCustomer(Bill bill) {
 
         String emailPattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
@@ -70,7 +77,31 @@ public class StockController {
         }
         return total;
     }
+    public String generatePassword(){
+        String Capital_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String Small_chars = "abcdefghijklmnopqrstuvwxyz";
+        String numbers = "0123456789";
+        String symbols = "@,";
+        int len=8;
 
+        String values = Capital_chars + Small_chars +
+                numbers + symbols;
+
+        // Using random method
+        Random rndm_method = new Random();
+
+        char[] password = new char[len];
+
+        for (int i = 0; i < len; i++)
+        {
+            // Use of charAt() method : to get character value
+            // Use of nextInt() as it is scanning the value as int
+            password[i] =
+                    values.charAt(rndm_method.nextInt(values.length()));
+
+        }
+        return new String(password);
+    }
     public void checkStock(List<BilledProduct> viewBilledProducts, int storeID) {
         for (BilledProduct temp : viewBilledProducts) {
             Stock stock = stockRepository.findByCondition(temp.getProductId(), storeID);
@@ -113,7 +144,18 @@ public class StockController {
 
 
     }
-
+@GetMapping("/salesStore")
+public List sales(){
+        return billsRepository.findByCondition();
+}
+    @GetMapping("/topSellingProduct")
+    public List TopProduct(){
+        return productRepository.findByCondition();
+    }
+    @GetMapping("/topSellingProduct/store/{id}")
+    public List TopProductByStore(@PathVariable int id){
+        return storesRepository.findByCondition(id);
+    }
     @GetMapping(value = "/product/id/{id}")
     public Product retrieveByProducts(@PathVariable int id) {
         return productRepository.findById(id).orElseThrow(() -> new StocksException("Product Not Found"));
@@ -133,6 +175,30 @@ public class StockController {
         headers.add("Response-from", "ProductValue");
 
         return new ResponseEntity(product1, headers, HttpStatus.OK);
+    }
+    @PostMapping("/storepassword")
+    public ResponseEntity<StorePassword> addStorePassword(@RequestBody StorePassword storePassword){
+        storePassword.setPassword(generatePassword());
+        System.out.println(storePassword.getPassword());
+        StorePassword storePassword1=storePasswordRepository.save(storePassword);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Response-from", "ProductValue");
+
+        sendMailToStore(storePassword1);
+        return new ResponseEntity(storePassword1, headers, HttpStatus.OK);
+
+    }
+    @PostMapping("/getstorepassword")
+    public ResponseEntity<StorePassword> getStorePassword(@RequestBody StorePassword storePassword){
+        StorePassword storePassword1=storePasswordRepository.findById(storePassword.getStoreId()).orElseThrow(()->new StocksException("User Id not found"));
+        if(!storePassword.getPassword().equals(storePassword1.getPassword())){
+            throw new StocksException("Password doesnt match");
+        }
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Response-from", "ProductValue");
+
+        return new ResponseEntity(storePassword1, headers, HttpStatus.OK);
+
     }
 
     @GetMapping("/stock/isenough")
