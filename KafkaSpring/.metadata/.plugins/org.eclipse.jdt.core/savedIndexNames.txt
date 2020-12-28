@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\GGHSBIDAR\Documents\workspace-spring-tool-suite-4-4.8.1.RELEASE\KafkaSpring\.metadata\.plugins\org.eclipse.jdt.core
+3762799438.index
+3435648363.index

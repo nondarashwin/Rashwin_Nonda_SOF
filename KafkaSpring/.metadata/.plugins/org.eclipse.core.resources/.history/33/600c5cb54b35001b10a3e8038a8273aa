@@ -1,0 +1,26 @@
+package com.manipal.demoKafka.configuration;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.ProducerFactory;
+
+import com.fasterxml.jackson.databind.ser.std.StringSerializer;
+
+@Configuration
+public class KafkaConfiguration {
+	
+	public ProducerFactory<String , String> producerFactory(){
+		Map<String , Object> configs = new HashMap<>();
+		
+		//configs for server
+		configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+		configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		ProducerFactory<String , String> 
+		
+	}
+
+}

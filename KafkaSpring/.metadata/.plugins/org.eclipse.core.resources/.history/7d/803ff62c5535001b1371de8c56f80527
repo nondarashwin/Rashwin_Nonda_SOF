@@ -1,0 +1,5 @@
+package com.manipal.consumer;
+
+public class KafkaConsumer {
+
+}

@@ -1,0 +1,5 @@
+package com.manipal.config;
+
+public class KafkaConfiguration {
+
+}
