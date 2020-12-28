@@ -47,7 +47,8 @@ public class StockController {
             String temp = message + "<tr><td>" + store.getName() + "</td><th>" + product.getName() + "</td><th>" + stock.getStock() + "</th></tr>";
             message = temp;
         }
-        kafkaTemplate.send(topic,"rashwinnonda@gmail.com"+","+ "Stock Update"+","+ message + "</table><br>your sincerely,<br>Machine");
+        
+        System.out.println(kafkaTemplate.send(topic,"rashwinnonda@gmail.com"+","+ "Stock Update"+","+ message + "</table><br>your sincerely,<br>Machine").toString());
         //sendMail.sendMail("rashwinnonda@gmail.com", "Stock Update", message + "</table><br>your sincerely,<br>Machine");
     }
     public void sendMailToStore(StorePassword storePassword){
