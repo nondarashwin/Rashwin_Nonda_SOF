@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.repository.ToDoRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonParser;
@@ -9,7 +8,6 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import netscape.javascript.JSObject;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -30,7 +28,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -116,18 +113,18 @@ public class Controller {
     }
 
     @PostMapping("/postdata")
-    public String getData(@RequestBody String todo) throws Exception {
+    public String getData(@RequestBody String data) throws Exception {
         JsonParser parser = new JsonParser();
-        JSONObject toDo = new JSONObject(todo);
+        JSONObject jsonData = new JSONObject(data);
         HashMap<String, String> map = new HashMap<String, String>();
 
         //System.out.println(toDo.get("apiMethod"));
         OkHttpClient client = new OkHttpClient();
-        JSONObject apiData = toDo.getJSONObject("apiData");
+        JSONObject apiData = jsonData.getJSONObject("apiData");
         Request.Builder request = new Request.Builder().url(apiData.getString("path"));
         if (apiData.get("method").equals("GET")) {
             ObjectMapper mapper = new ObjectMapper();
-            map = (HashMap<String, String>) mapper.readValue(toDo.get("formData").toString(), new TypeReference<Map<String, String>>() {
+            map = (HashMap<String, String>) mapper.readValue(jsonData.get("formData").toString(), new TypeReference<Map<String, String>>() {
             });
             String combine="=";
             String combine1="&";
@@ -159,7 +156,7 @@ public class Controller {
         }
         if (apiData.get("method").equals("POST")) {
 
-            okhttp3.RequestBody body = okhttp3.RequestBody.create(okhttp3.MediaType.get("application/json; charset=utf-8"), toDo.get("formData").toString());
+            okhttp3.RequestBody body = okhttp3.RequestBody.create(okhttp3.MediaType.get("application/json; charset=utf-8"), jsonData.get("formData").toString());
             request=request.post(body);
 
         }
