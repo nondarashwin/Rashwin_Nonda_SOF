@@ -9,12 +9,14 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import netscape.javascript.JSObject;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 import org.bson.Document;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,43 +121,56 @@ public class Controller {
         JSONObject toDo = new JSONObject(todo);
         HashMap<String, String> map = new HashMap<String, String>();
 
-        System.out.println(toDo.get("apiMethod"));
+        //System.out.println(toDo.get("apiMethod"));
         OkHttpClient client = new OkHttpClient();
-        if (toDo.get("apiMethod").equals("GET")) {
+        JSONObject apiData = toDo.getJSONObject("apiData");
+        Request.Builder request = new Request.Builder().url(apiData.getString("path"));
+        if (apiData.get("method").equals("GET")) {
             ObjectMapper mapper = new ObjectMapper();
             map = (HashMap<String, String>) mapper.readValue(toDo.get("formData").toString(), new TypeReference<Map<String, String>>() {
             });
-            HashMap<String, String> finalMap = map;
+            String combine="=";
+            String combine1="&";
+            String combine2="?";
+            if(apiData.getString("uriType").equals("/")){
+                combine="/";
+                combine1="/";
+                combine2="";
+            }
+                HashMap<String, String> finalMap = map;
+            String finalCombine = combine;
             String encodedURL = map.keySet().stream()
-                    .map(key -> {
-                                try {
-                                    return key + "=" + encodeValue(finalMap.get(key));
-                                } catch (UnsupportedEncodingException e) {
-                                    e.printStackTrace();
+                        .map(key -> {
+                                    try {
+                                        return key + finalCombine + encodeValue(finalMap.get(key));
+                                    } catch (UnsupportedEncodingException e) {
+                                        e.printStackTrace();
+                                    }
+                                    return "";
                                 }
-                                return "";
-                            }
 
-                    )
-                    .collect(joining("&", toDo.get("apiPath") + "?", ""));
-            System.out.println(encodedURL);
-            Request request = new Request.Builder().url(encodedURL).get().build();
-
-            Call call = client.newCall(request);
-            Response response = call.execute();
-            return response.body().string();
+                        )
+                        .collect(joining(combine1, apiData.get("path") + combine2, ""));
+                System.out.println(encodedURL);
+                //Request request = new Request.Builder().url(encodedURL).get().build();
+            request = new Request.Builder().url(encodedURL);
+                request=request.get();
 
         }
-        if (toDo.get("apiMethod").equals("POST")) {
+        if (apiData.get("method").equals("POST")) {
 
             okhttp3.RequestBody body = okhttp3.RequestBody.create(okhttp3.MediaType.get("application/json; charset=utf-8"), toDo.get("formData").toString());
-            Request request = new Request.Builder().url((String) toDo.get("apiPath")).post((okhttp3.RequestBody) body).build();
+            request=request.post(body);
 
-            Call call = client.newCall(request);
-            Response response = call.execute();
-            return response.body().string();
         }
-        return "";
+        JSONArray headers=apiData.getJSONArray("headers");
+        for(int i=0;i<headers.length();i++){
+            JSONObject header= (JSONObject) headers.get(i);
+            request=request.addHeader(header.getString("header"),header.getString("value"));
+        }
+        Call call = client.newCall(request.build());
+        Response response = call.execute();
+        return response.body().string();
     }
 
 }
