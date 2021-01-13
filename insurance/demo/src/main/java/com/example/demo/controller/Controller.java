@@ -114,11 +114,15 @@ public class Controller {
 
     @PostMapping("/postdata")
     public String getData(@RequestBody String data) throws Exception {
-        JsonParser parser = new JsonParser();
+        //JsonParser parser = new JsonParser();
         JSONObject jsonData = new JSONObject(data);
-        HashMap<String, String> map = new HashMap<String, String>();
-
-        //System.out.println(toDo.get("apiMethod"));
+        HashMap<String, String> map;
+        Document doc = Document.parse(data);
+        mongoTemplate.execute("requests", mongoCollection -> {
+            List<Document> lsit = new ArrayList<>();
+            mongoCollection.insertOne(doc);
+            return lsit;
+        });
         OkHttpClient client = new OkHttpClient();
         JSONObject apiData = jsonData.getJSONObject("apiData");
         Request.Builder request = new Request.Builder().url(apiData.getString("path"));
@@ -149,7 +153,7 @@ public class Controller {
                         )
                         .collect(joining(combine1, apiData.get("path") + combine2, ""));
                 System.out.println(encodedURL);
-                //Request request = new Request.Builder().url(encodedURL).get().build();
+
             request = new Request.Builder().url(encodedURL);
                 request=request.get();
 
