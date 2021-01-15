@@ -30,7 +30,7 @@ class Encryption {
     @Throws(IOException::class)
     fun decrypt(codedString: String): String {
         var messageString = ""
-        val file = File("/home/rashwin/Project/Rashwin_Nonda_SOF/CaseStudy/Zippq/postman/src/main/java/com/stores/postman/mail/key.txt")
+        val file = File("src/main/kotlin/com/manipal/mail/mail/key.txt")
         val fileInputStream = FileInputStream(file)
         keys = String(fileInputStream.readAllBytes())
         //System.out.println(keys);
@@ -46,6 +46,7 @@ class Encryption {
             val temp = messageString
             messageString = temp + charArray[i]
         }
+        //println(messageString)
         return messageString
     }
 
